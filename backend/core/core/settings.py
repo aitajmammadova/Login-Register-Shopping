@@ -21,7 +21,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'a.mammadzadeh01@gmail.com'
 EMAIL_HOST_PASSWORD = 'jwub yclr twqx okmu'  # Gmail App Password kullan
-
+ 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 

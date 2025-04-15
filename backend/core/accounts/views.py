@@ -35,9 +35,14 @@ def activate_account(request, uidb64, token):
 # 📌 Kullanıcı Girişi (Login ve JWT Token Alma)
 @api_view(['POST'])
 def login(request):
-    username = request.data.get("username")
+    # identifier=request.data.get("username") or request.data.get("email")
+    username=request.data.get("username")
     password = request.data.get("password")
+
+    # user = User.objects.filter(username=identifier).first()
     user = User.objects.filter(username=username).first()
+    # if not user:
+    #     user=User.objects.filter(email=identifier).first()
 
     if user and user.check_password(password):
         if not user.is_active:

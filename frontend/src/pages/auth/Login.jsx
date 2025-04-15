@@ -7,7 +7,7 @@ const Login = () => {
     const navigate=useNavigate()
     const [loading,setLoading]=useState(false)
     const [formData,setFormData]=useState({
-        email:"",
+        username:"",
         password:""
     })
 
@@ -24,7 +24,8 @@ const Login = () => {
         try{
             const response=await login(formData)
             alert("Login successfully!")
-            localStorage.setItem("token", response.token)
+            console.log(response)
+            localStorage.setItem("token", response.access)
             navigate("/dashboard")
 
         }catch(error){
@@ -37,11 +38,11 @@ const Login = () => {
         <div className="login-container">
             <h2>Login</h2>
             <form onSubmit={handleSubmit}>
-                <label>Email:</label>
+                <label>Username:</label>
                 <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                    type="text"
+                    name="username"
+                    value={formData.username}
                     onChange={handleChange}
                     required
                 />
